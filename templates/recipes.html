@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toms Kitchen</title>
+</head>
+<body>
+    {% for recipes in recipes %}
+        {{recipes.recipe_name}}<br>
+        {{recipes.recipe_image_url}}<br>
+        {{recipes.recipe_prep_time}}<br>
+        {{recipes.recipe_cook_time}}<br>
+        {{recipes.recipe_description}}<br>
+        {{recipes.recipe_serves}}<br>
+        {{recipes.recipe_ingredients}}<br>
+        {{recipes.recipe_method}}<br>
+        {{recipes.username}}<br>
+    {% endfor %}
+</body>
+</html>
