@@ -1,0 +1,28 @@
+body {
+  background-image: url("/static/images/Background-Bakery-Wallpaper.jpg");
+  background-size:contain;
+  width: 100%;
+ 
+}
+
+.custom-grey {
+  background-color: #937566;
+  
+}
+
+.logo {
+  width: 60%;
+}
+
+.logo-block {
+  margin-bottom: 0px;
+}
+
+
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
