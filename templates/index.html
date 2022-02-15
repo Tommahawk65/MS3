@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="row center logo-block">
+          <img class= "logo" src="/static/images/company.png" alt="">
+      </div>
+      <div class="row center">
+        <a href="{{ url_for('register')}}" id="download-button" class="btn-large waves-effect waves-light custom-grey">Get Started</a>
+      </div>
+    </div>
+  </div>
+
   <!--   Icon Section   -->
   <div class="container">
       <div class="section">
@@ -46,16 +57,4 @@
      
       </div>
   </div>
-    <h2>extension!</h2>
-    {% for recipes in recipes %}
-        {{recipes.recipe_name}}<br>
-        {{recipes.recipe_image_url}}<br>
-        {{recipes.recipe_prep_time}}<br>
-        {{recipes.recipe_cook_time}}<br>
-        {{recipes.recipe_description}}<br>
-        {{recipes.recipe_serves}}<br>
-        {{recipes.recipe_ingredients}}<br>
-        {{recipes.recipe_method}}<br>
-        {{recipes.username}}<br>
-    {% endfor %}
 {% endblock %}

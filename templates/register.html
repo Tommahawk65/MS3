@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="center-align">Register</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <div class="card-panel grey lighten-5">
+                <!-- username -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix grey-text">account_circle</i>
+						<input id="email" name="email" type="email" class="validate" required>
+						<label for="email">Email</label>
+					</div>
+                </div>
+                <!-- passowrd -->
+                <div class="row">
+                    <div class="input-field col s12">
+						<i class="material-icons prefix grey-text">lock</i>
+                        <input id="password" name="password" type="password" class="validate" minlength="5" maxlength="15" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- register -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large waves-effect waves-light custom-grey text-shadow">
+                        Register 
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

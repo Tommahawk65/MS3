@@ -13,9 +13,9 @@
 <body>
        <!-- Navbar ---->
     <ul id="dropdown1" class="dropdown-content custom-grey white-text">
-        <li><a class="white-text" href="#!">Bread</a></li>
-        <li><a class="white-text" href="#!">Cake</a></li>
-        <li><a class="white-text" href="#!">Biscuit</a></li>
+        <li><a class="white-text" href="{{ url_for('get_recipes')}}">Bread</a></li>
+        <li><a class="white-text" href="{{ url_for('get_recipes')}}">Cake</a></li>
+        <li><a class="white-text" href="{{ url_for('get_recipes')}}">Biscuit</a></li>
     </ul>
     <nav class="custom-grey" role="navigation">
       <div class="nav-wrapper container">
@@ -24,79 +24,26 @@
 
           </a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Home</a></li>
+          <li><a href="{{ url_for('home')}}">Home</a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipe<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
+          <li><a href="{{ url_for('login')}}">Login</a></li>
+          <li><a href="{{ url_for('register')}}">Register</a></li>
         </ul>
   
         <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Recipe</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
+          <li><a href="{{ url_for('home')}}">Home</a></li>
+          <li><a href="{{ url_for('get_recipes')}}">Bread</a></li>
+          <li><a href="{{ url_for('get_recipes')}}">Cake</a></li>
+          <li><a href="{{ url_for('get_recipes')}}">Biscuit</a></li>
+          <li><a href="{{ url_for('login')}}">Login</a></li>
+          <li><a href="{{ url_for('register')}}">Register</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
     <!------>
-    <div class="section no-pad-bot" id="index-banner">
-      <div class="container">
-        <div class="row center logo-block">
-            <img class= "logo" src="/static/images/company.png" alt="">
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light custom-grey">Get Started</a>
-        </div>
-      </div>
-    </div>
-  
-    <!--   Icon Section   -->
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s6 m4">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/cupcakes-22aa045.jpg?quality=90&webp=true&resize=440,400">
-                      <span class="card-title">Cupcake</span>
-                      <a class="btn-floating halfway-fab waves-effect waves-light pink lighten-3"><i class="material-icons">favorite</i></a>
-                    </div>
-                    <div class="card-content">
-                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s6 m4">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/cupcakes-22aa045.jpg?quality=90&webp=true&resize=440,400g">
-                        <span class="card-title">Cupcake</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light pink lighten-3"><i class="material-icons">favorite</i></a>
-                      </div>
-                      <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </div>
-                    </div>
-                </div>
-                <div class="col s6 m4">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/cupcakes-22aa045.jpg?quality=90&webp=true&resize=440,400">
-                        <span class="card-title">Cupcake</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light pink lighten-3"><i class="material-icons">favorite</i></a>
-                      </div>
-                      <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </div>
-                    </div>
-                </div>
-            </div>
-  
-      
-       
-        </div>
-    </div>
+    {% block content %}
+    {% endblock %}
   
     <footer class="page-footer custom-grey">
       <div class="container">
@@ -133,15 +80,8 @@
         </div>
       </div>
     </footer>
-  
-  
 
-    
   
-    
-    <h1>Hello There!</h1>
-    {% block content %}
-    {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
