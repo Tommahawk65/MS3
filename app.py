@@ -65,10 +65,14 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("name")
+
+                    # get the email from the login form
+                    session["email"] = request.form.get("email")
+                    # find the user and get there name
+                    session["user"] = mongo.db.users.find_one({"email": request.form.get("email")})["name"]
+                    
                     flash("Welcome, {}".format(existing_user["name"]))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -89,6 +93,11 @@ def profile(username):
         {"name": session["user"]})["name"]
     return render_template("profile.html", username=username)
 
+
+@app.route('/logout')
+def logout():
+    session.pop("user")
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
