@@ -5,10 +5,17 @@
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel grey lighten-5">
-                <!-- username -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix grey-text">account_circle</i>
+						<input id="name" name="name" type="text" class="validate" required>
+						<label for="name">Name</label>
+					</div>
+                </div>
+                <!-- username -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix grey-text">email</i>
 						<input id="email" name="email" type="email" class="validate" required>
 						<label for="email">Email</label>
 					</div>
