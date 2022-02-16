@@ -47,9 +47,9 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        session["user"] = request.form.get("email").lower()
+        session["user"] = request.form.get("name").lower()
         flash("Registration Successful!")
-#        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -59,7 +59,7 @@ def login():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
-        
+
 
         if existing_user:
             # ensure hashed password matches user input
@@ -82,15 +82,16 @@ def login():
     return render_template("login.html")
 
 
-#@app.route("/profile/<username>", methods=["GET", "POST"])
-#def profile(username):
-    # grab the session user's username from db
-#    #username = mongo.db.users.find_one(
-#        {"username": session["user"]})["username"]
- #   return render_template("profile.html", username=username)
+@app.route("/profile<username>", methods=["GET", "POST"])
+def profile(username):
+#    grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"name": session["user"]})["name"]
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
