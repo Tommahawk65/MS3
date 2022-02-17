@@ -27,11 +27,11 @@
           <li><a href="{{ url_for('home')}}">Home</a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipe<i class="material-icons right">arrow_drop_down</i></a></li>
           {% if session.user %}
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('logout')}}">Logout</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout')}}">Logout</a></li>
           {% else %}
-          <li><a href="{{ url_for('login')}}">Login</a></li>
-          <li><a href="{{ url_for('register')}}">Register</a></li>
+            <li><a href="{{ url_for('login')}}">Login</a></li>
+            <li><a href="{{ url_for('register')}}">Register</a></li>
           {% endif %}
         </ul>
   
@@ -41,11 +41,11 @@
           <li><a href="{{ url_for('get_recipes')}}">Cake</a></li>
           <li><a href="{{ url_for('get_recipes')}}">Biscuit</a></li>
           {% if session.user %}
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('logout')}}">Logout</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout')}}">Logout</a></li>
           {% else %}
-          <li><a href="{{ url_for('login')}}">Login</a></li>
-          <li><a href="{{ url_for('register')}}">Register</a></li>
+            <li><a href="{{ url_for('login')}}">Login</a></li>
+            <li><a href="{{ url_for('register')}}">Register</a></li>
           {% endif %}
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
