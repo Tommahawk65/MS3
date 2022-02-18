@@ -5,6 +5,7 @@
     $(".dropdown-trigger").dropdown();
     $('select').formSelect();
     $('input#input_text, textarea#recipe_description').characterCounter();
+    $('.carousel').carousel();
 
     let ing = 1;
 
