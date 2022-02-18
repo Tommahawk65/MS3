@@ -24,6 +24,11 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    recipes = list(mongo.db.recipes.find())
+    return render_template("full-recipe.html", recipes=recipes)
+
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
@@ -119,8 +124,6 @@ def add_recipe():
         return redirect(url_for("add_recipe"))
     
     return render_template("add-recipe.html")
-
-
 
 
 @app.route('/logout')
