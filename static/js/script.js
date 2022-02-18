@@ -24,6 +24,23 @@
         ing--;
     });
 
+    let stp = 1;
+
+    $(".add-step").click(function (e) {
+        e.preventDefault();
+            stp++;
+            $(".step-new").append(`
+            <div class="input-field">
+            <input id="recipe_steps${stp}" name="recipe_steps" type="text" class="validate" required>
+            <label for="recipe_steps${stp}">Recipe Step</label>
+            <button type="button" class="btn remove-step">Delete</button></div>`);
+    });
+  
+    $("body").on('click', ".remove-step", function () {
+        $(this).parent('div').remove();
+        stp--;
+    });
+
     validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
@@ -52,23 +69,6 @@
         });
     }
 
-
-    let stp = 1;
-
-    $(".add-step").click(function (e) {
-        e.preventDefault();
-            stp++;
-            $(".step-new").append(`
-            <div class="input-field">
-            <input id="recipe_steps${stp}" name="recipe_steps" type="text" class="validate" required>
-            <label for="recipe_steps${stp}">Recipe Step</label>
-            <button type="button" class="btn remove-step">Delete</button></div>`);
-    });
-  
-    $("body").on('click', ".remove-step", function () {
-        $(this).parent('div').remove();
-        stp--;
-    });
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

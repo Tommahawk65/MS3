@@ -24,10 +24,17 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
+
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full-recipe.html", recipes=recipes)
+
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("edit-recipe.html", recipes=recipes)
 
 
 @app.route("/home", methods=["GET", "POST"])

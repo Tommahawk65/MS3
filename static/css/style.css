@@ -49,3 +49,12 @@ body {
   margin-right: auto;
   
 }
+
+
+
+
+.delete-btn,
+.edit-btn{
+  
+  width: 100%;
+}
