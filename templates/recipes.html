@@ -9,7 +9,7 @@
         <div class="col s6 m4">
           <div class="card">
             <div class="card-image">
-              <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">
+              <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
                 <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
               </a>
               <span class="card-title black-text">{{recipes.recipe_name}}</span>

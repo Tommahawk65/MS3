@@ -1,5 +1,73 @@
 {% extends "base.html" %}
 
-{% block heading %}
-<h2>{{ recipe.recipe_name }} Recipe</h2>
+{% block content %}
+<section>
+    <br><br><br>
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel teal">
+                <div class="row">
+                    <div class="col s12">
+                        <h2 class="center">{{ recipes.recipe_name }} Recipe</h2>
+                    </div>
+                </div>
+                <br><br>
+
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <img src="{{recipes.recipe_image_url}}" class="main-recipe-img responsive-img" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
+                    </div>
+                    <div class=" col s12 l6 card-panel white">
+                        <div class="col s12">
+                            <h4 class="center">{{ recipes.recipe_name }} Recipe by {{ recipes.username }} </h4>
+                            <br>
+                            <p>{{recipes.recipe_description}}</p><br>
+                        </div>
+                        
+                        <div class="row info-numbers">
+                            <div class="col s4">
+                                <h6 class="center">Prep Time  
+                                    <p>{{ recipes.recipe_prep_time }} mins</p>  
+                                </h6>
+                            </div>
+                            <div class="col s4">
+                                <h6 class="center">Cook Time  
+                                    <p>{{ recipes.recipe_cook_time }} mins</p>  
+                                </h6>
+                            </div>
+                            <div class="col s4">
+                                <h6 class="center">Serves  
+                                <p>{{ recipes.recipe_serves }}</p>  
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col l7 m12 s12 card-panel recipe-steps white">
+                        <ol class="">
+                            {% for method in recipes.recipe_method %}
+                            <li>
+                               <p>{{ method }}</p>
+                            </li><hr>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                    <div class=" col l1">
+                    </div>
+                    <div class=" col l4 m12 s12 card-panel white">
+                        <ul class="">
+                            {% for ingredients in recipes.recipe_ingredients %}
+                            <li>
+                               <p>{{ ingredients }}</p>
+                            </li><hr>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

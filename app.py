@@ -26,7 +26,7 @@ def get_recipes():
 
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
-    recipes = list(mongo.db.recipes.find())
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full-recipe.html", recipes=recipes)
 
 

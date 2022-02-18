@@ -40,3 +40,12 @@ body {
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+
+
+.main-recipe-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
