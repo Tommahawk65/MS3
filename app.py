@@ -55,6 +55,16 @@ def edit_recipe(recipe_id):
     return render_template("edit-recipe.html", recipes=recipes)
 
 
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    username = mongo.db.users.find_one(
+        {"name": session["user"]})["name"]
+    flash("Recipe Deleted")
+    return render_template("profile.html", username=username)
+
+
+
 @app.route("/home", methods=["GET", "POST"])
 def home():
     recipes = list(mongo.db.recipes.find())

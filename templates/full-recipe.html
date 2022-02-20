@@ -76,7 +76,7 @@
             </div>
         
             <div class="col s6 l6">
-                <a class=" delete-btn red lighten-2 waves-effect waves-light btn-large"><i class="material-icons left">delete</i>Delete</a>
+                <a href="{{ url_for('delete_recipe', recipe_id=recipes._id) }}" class=" delete-btn red lighten-2 waves-effect waves-light btn-large"><i class="material-icons left">delete</i>Delete</a>
             </div>
         {% endif %}
     </div>
