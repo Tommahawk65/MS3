@@ -56,31 +56,50 @@
                 </div>
                 <!-- Recipe Ingredients -->
                 <div class="row">
-                    <div class="input-field col s12">
-                        <p class="grey-text">Recipe Ingredients</p>
+                    {% for recipe_ingredients in recipes.recipe_ingredients %}
+                        <div class="input-field col s12">
+                            <input id="recipe_ingredients {{ loop.index }}" name="recipe_ingredients {{ loop.index }}" type="text" value="{{ recipe_ingredients }}" class="validate" required>
+                            <label class="grey-text" for="recipe_ingredients {{ loop.index }}">Recipe Ingredients</label>
+                            <button type="button" class="btn remove-ingredient">Delete</button><br>
+                            <br>
+                        </div>
+                    {% endfor %}
                         <!-- New ingredient input added here -->
-                        <div class="ing-new"></div>
-                        <button type="button" class="btn add-ingredient">Add Ingredient</button>
-                    </div>
+                            <div class="ing-new"></div>
+                            <button type="button" class="btn add-ingredient">Add Ingredient</button>
                 </div>
                 <!-- Recipe Steps -->
+                <br><br><br>
                 <div class="row">
-                    <div class="input-field col s12">
-                        <p class="grey-text">Recipe Steps</p>
+                    {% for recipe_method in recipes.recipe_method %}
+                        <div class="input-field col s12">
+                            <input id="recipe_method {{loop.index}}" name="recipe_method {{loop.index}}" type="text" value="{{ recipe_method }}" class="validate" required>
+                            <label class="grey-text" for="recipe_method {{ loop.index }}">Recipe Steps</label>
+                            <button type="button" class="btn remove-step">Delete</button>
+                            <br>
+                        </div>
+                    {% endfor %}
                         <!-- New step input added here -->
                         <div class="step-new"></div>
                         <button type="button" class="btn add-step">Add Step</button>
-                    </div>
                 </div>
+                
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col s12 center-align">
-                        <button type="submit" class="col s12 btn-large waves-effect waves-light custom-grey text-shadow">
+                        <button type="submit" class="col s12 l4 btn-large waves-effect waves-light light-blue text-shadow">
                             Edit 
                         </button>
+                        <div class="col s0 l4"></div>
+                        <a href="{{ url_for('home')}}" id="download-button" class="col s12 l4 center-align btn-large waves-effect waves-light custom-grey">Cancel</a>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 {% endblock %}
+
+
+
+
+
