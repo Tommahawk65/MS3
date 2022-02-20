@@ -44,10 +44,12 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_method": request.form.getlist("recipe_method"),
-            "username": session["user"]
+            "username": ObjectId(user["_id"])
         }
+        #not working currently :/
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Recipe Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
 
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit-recipe.html", recipes=recipes)
@@ -122,7 +124,9 @@ def profile(username):
         {"name": session["user"]})["name"]
     
     if session["user"]:
-        return render_template("profile.html", username=username)
+        recipes = list(mongo.db.recipes.find())
+        return render_template("profile.html", username=username, recipes=recipes)
+    
     
     return redirect(url_for("login")) 
 

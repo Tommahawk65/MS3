@@ -70,15 +70,15 @@
         </div>
     </div>
     <div class=" container row">
+        {% if session.user|lower == recipes.username|lower %}
+            <div class="col s6 l6">
+                <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="edit-btn light-blue waves-effect waves-light btn-large" ><i class="material-icons left">edit</i>Edit</a>
+            </div>
         
-        <div class="col s6 l6">
-            <a href="{{ url_for('edit_recipe', recipe_id=recipes._id) }}" class="edit-btn light-blue waves-effect waves-light btn-large" ><i class="material-icons left">edit</i>Edit</a>
-        </div>
-      
-        <div class="col s6 l6">
-            <a class=" delete-btn red lighten-2 waves-effect waves-light btn-large"><i class="material-icons left">delete</i>Delete</a>
-        </div>
-        
+            <div class="col s6 l6">
+                <a class=" delete-btn red lighten-2 waves-effect waves-light btn-large"><i class="material-icons left">delete</i>Delete</a>
+            </div>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
