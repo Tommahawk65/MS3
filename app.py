@@ -51,7 +51,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.getlist("recipe_ingredients"),
             "recipe_method": request.form.getlist("recipe_method"),
-            "username": ObjectId(user["_id"])
+            "username": session["user"]
         }
         #not working currently :/
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)

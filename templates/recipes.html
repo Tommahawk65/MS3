@@ -1,40 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
   <!--   Icon Section   -->
-  
-  <div class="container">
-    <div class="row card-panel grey lighten-5">
-      <form action="{{ url_for('search') }}" method="post" class="col s12">
-          <div class="center-align">
-              <div class="input-field col s12 ">
-                  <i class="material-icons prefix">search</i>
-                  <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                  <label for="query">Search Recipes</label>
-              </div>
-          </div>
-      </form>
+  <div class="row card-panel grey lighten-5">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="center-align">
+            <div class="input-field col s12 ">
+                <i class="material-icons prefix">search</i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search Recipes</label>
+            </div>
+        </div>
+    </form>
   </div>
   {% if recipes|length > 0 %}
-    <div class="section">
-      <div class="row">
-        {% for recipes in recipes %}
-        <div class="col s6 m4">
-          <div class="card">
-            <div class="card-image">
-              <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
-                <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
-              </a>
-              <span class="card-title black-text">{{recipes.recipe_name}}</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light pink lighten-3"><i class="material-icons">favorite</i></a>
-            </div>
-            <div class="card-content">
-              <p>{{recipes.recipe_description}}</p>
-            </div>
+  <div class="section">
+    <div class="row">
+      {% for recipes in recipes %}
+      <div class="col s6 m4 l4 xl3">
+        <div class="card">
+          <div class="card-image">
+            <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
+              <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
+            </a>
+            <span class="card-title black-text">{{recipes.recipe_name}}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light pink lighten-3"><i class="material-icons">favorite</i></a>
+          </div>
+          <div class="card-content recipe-card-info">
+            <p>{{recipes.recipe_description}}</p>
           </div>
         </div>
-        {% endfor %}
-      </div> 
-    </div>
+      </div>
+      {% endfor %}
+    </div> 
   </div>
   {% else %}
         <h3 class="center-align">No Results Found</h3>

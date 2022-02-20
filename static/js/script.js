@@ -31,8 +31,8 @@
             stp++;
             $(".step-new").append(`
             <div class="input-field">
-            <input id="recipe_steps${stp}" name="recipe_steps" type="text" class="validate" required>
-            <label for="recipe_steps${stp}">Recipe Step</label>
+            <input id="recipe_method${stp}" name="recipe_method" type="text" class="validate" required>
+            <label for="recipe_method${stp}">Recipe Step</label>
             <button type="button" class="btn remove-step">Delete</button></div>`);
     });
   
