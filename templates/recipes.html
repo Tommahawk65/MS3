@@ -17,17 +17,17 @@
     <div class="row">
       {% for recipes in recipes %}
       <div class="col s6 m4 l4 xl3">
-        <div class="card">
-          <div class="card-image">
-            <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
-              <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
-            </a>
-            <span class="card-title black-text">{{recipes.recipe_name}}</span>
+        <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
+          <div class="card">
+            <div class="card-image">
+                <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.jpeg';">
+              <span class="card-title trans-grey white-text">{{recipes.recipe_name}}</span>
+            </div>
+            <div class="card-content black-text recipe-card-info">
+              <p>{{recipes.recipe_description}}</p>
+            </div>
           </div>
-          <div class="card-content recipe-card-info">
-            <p>{{recipes.recipe_description}}</p>
-          </div>
-        </div>
+        </a>
       </div>
       {% endfor %}
     </div> 

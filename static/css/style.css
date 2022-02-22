@@ -61,10 +61,24 @@ body {
 
 
 
-
+.dotted-card-panel {
+  border-color: #937566;
+  border-style: dashed;
+  background-color: #fbfbfbc7;
+  border-left: none;
+  border-right: none;
+}
 
 
 .recipe-card-info{
   min-height: 325px;
   
+}
+
+.trans-grey{
+  background-color: #58575273;
+}
+
+.trans-white{
+  background-color: #fbfbfbe0;
 }
