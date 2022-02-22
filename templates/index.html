@@ -6,7 +6,11 @@
           <img class= "logo" src="/static/images/company.png" alt="">
       </div>
       <div class="row center">
+        {% if session.user %}
+        <a href="{{ url_for('profile', username=session['user']) }}" id="download-button" class="btn-large waves-effect waves-light custom-grey">Your Profile</a>
+        {% else %}
         <a href="{{ url_for('register')}}" id="download-button" class="btn-large waves-effect waves-light custom-grey">Get Started</a>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -39,3 +43,4 @@
   </div>
   <br>
 {% endblock %}
+

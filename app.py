@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes")
+@app.route("/get_recipes/<category_id>")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
@@ -53,7 +53,7 @@ def edit_recipe(recipe_id):
             "recipe_method": request.form.getlist("recipe_method"),
             "username": session["user"]
         }})
-        #not working currently :/
+        
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -163,7 +163,7 @@ def add_recipe():
             "username": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Task Successfully Added")
+        flash("Recipe Successfully Added")
         return redirect(url_for("add_recipe"))
     
     return render_template("add-recipe.html")
