@@ -19,10 +19,16 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes/<category_id>")
-def get_recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+@app.route("/get_recipes/<category>")
+def get_recipes(category):
+    if category == "bread":
+        recipes = list(mongo.db.recipes.find({"recipe_type": "Bread"}))
+    elif category == "cake":
+        recipes = list(mongo.db.recipes.find({"recipe_type": "Cake"}))
+    elif category == "biscuit":
+        recipes = list(mongo.db.recipes.find({"recipe_type": "Biscuit"}))
+    
+    return render_template("recipes.html", recipes=recipes, category=category)
 
 
 @app.route("/search", methods=["GET", "POST"])
