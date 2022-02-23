@@ -21,6 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes/<category>")
 def get_recipes(category):
+     # matches selected category and only displays matching recipes
     if category == "bread":
         recipes = list(mongo.db.recipes.find({"recipe_type": "Bread"}))
     elif category == "cake":
@@ -33,6 +34,7 @@ def get_recipes(category):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+     # serches mongo from text input
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
@@ -40,6 +42,7 @@ def search():
 
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
+    # Displays full recipe page
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("full-recipe.html", recipes=recipes)
 
@@ -47,6 +50,7 @@ def full_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
+        # Loads options already in database and alows user to update them
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': {
             "recipe_type": request.form.get("recipe_type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -69,6 +73,7 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    # Delete recipe from database
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     username = mongo.db.users.find_one(
         {"name": session["user"]})["name"]
@@ -79,6 +84,7 @@ def delete_recipe(recipe_id):
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
+    # Homepage with another list of recipes
     recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes)
 
@@ -86,9 +92,10 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # checks if email already exists in database
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
-
+       
         if existing_user:
             flash("Email already used")
             return redirect(url_for("register"))
@@ -109,30 +116,27 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        # checks if username already exists in database
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
 
 
         if existing_user:
-            # ensure hashed password matches user input
+            # ensure hashed password matches input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-
-                    # get the email from the login form
                     session["email"] = request.form.get("email")
-                    # find the user and get there name
                     session["user"] = mongo.db.users.find_one({"email": request.form.get("email")})["name"]
                     
                     flash("Welcome, {}".format(existing_user["name"]))
                     return redirect(url_for("profile", username=session["user"]))
             else:
-                # invalid password match
-                flash("Incorrect Username and/or Password")
+                #  password/email dont match
+                flash("Incorrect Email and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # email doesn't exist
             flash("Incorrect Email and/or Password")
             return redirect(url_for("login"))
 
@@ -141,7 +145,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-#    grab the session user's username from db
+    # find the current users username from database
     username = mongo.db.users.find_one(
         {"name": session["user"]})["name"]
     
@@ -156,6 +160,7 @@ def profile(username):
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        # adds recipe to database
         recipe = {
             "recipe_type": request.form.get("recipe_type"),
             "recipe_name": request.form.get("recipe_name"),

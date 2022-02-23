@@ -7,6 +7,8 @@
     $('input#input_text, textarea#recipe_description').characterCounter();
     $('.carousel').carousel();
 
+    // adds steps & ingredients on form
+
     let ing = 1;
 
     $(".add-ingredient").click(function (e) {
@@ -40,6 +42,8 @@
         $(this).parent('div').remove();
         stp--;
     });
+
+    // edit recipe dropdown loads previoos selection
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
