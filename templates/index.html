@@ -24,11 +24,11 @@
   </div>
   <br><br>
   <!--  Carousel Section   -->
-  <h3 class= "center">Top Recipes</h1>
+  <h3 class= "center">Top Recipes</h3>
   <div class="container">
       <div class="section">
             <div class="carousel">
-                <div row>
+                <div class= "row">
                   {% for recipes in recipes %}
                   <div class="carousel-item">
                     <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">

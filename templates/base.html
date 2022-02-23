@@ -8,21 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="icon" href="/static/images/cake logo.png">
+    <link rel="icon" href="/static/images/cake-logo.png">
     <title>Toms Bakery</title>
 </head>
 <body>
-       <!-- Navbar ---->
+       <!-- Navbar -->
     <ul id="dropdown1" class="dropdown-content custom-grey white-text">
         <li><a class="white-text" href="{{ url_for('get_recipes', category='bread')}}">Bread</a></li>
         <li><a class="white-text" href="{{ url_for('get_recipes', category='cake')}}">Cake</a></li>
         <li><a class="white-text" href="{{ url_for('get_recipes', category='biscuit')}}">Biscuit</a></li>
     </ul>
-    <nav class="custom-grey" role="navigation">
+    <nav class="custom-grey">
       <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">
-              <img class="responsive-img" src="" alt="">
-          </a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('home')}}">Home</a></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Recipe<i class="material-icons right">arrow_drop_down</i></a></li>

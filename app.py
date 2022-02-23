@@ -28,20 +28,19 @@ def home():
 
 @app.route("/get_recipes/<category>")
 def get_recipes(category):
-     # matches selected category and only displays matching recipes
+    # matches selected category and only displays matching recipes
     if category == "bread":
         recipes = list(mongo.db.recipes.find({"recipe_type": "Bread"}))
     elif category == "cake":
         recipes = list(mongo.db.recipes.find({"recipe_type": "Cake"}))
     elif category == "biscuit":
         recipes = list(mongo.db.recipes.find({"recipe_type": "Biscuit"}))
-    
     return render_template("recipes.html", recipes=recipes, category=category)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-     # serches mongo from text input
+    # serches mongo from text input
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
@@ -70,7 +69,6 @@ def edit_recipe(recipe_id):
             "recipe_method": request.form.getlist("recipe_method"),
             "username": session["user"]
         }})
-        
         flash("Recipe Successfully Updated")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -94,7 +92,6 @@ def register():
         # checks if email already exists in database
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
-       
         if existing_user:
             flash("Email already used")
             return redirect(url_for("register"))
@@ -118,22 +115,22 @@ def login():
         # checks if username already exists in database
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
-
-
         if existing_user:
             # ensure hashed password matches input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                        existing_user["password"], request.form.get(
+                                      "password")):
                     session["email"] = request.form.get("email")
-                    session["user"] = mongo.db.users.find_one({"email": request.form.get("email")})["name"]
-                    
+                    session["user"] = mongo.db.users.find_one(
+                        {"email": request.form.get("email")})["name"]
+
                     flash("Welcome, {}".format(existing_user["name"]))
-                    return redirect(url_for("profile", username=session["user"]))
+                    return redirect(url_for("profile",
+                                    username=session["user"]))
             else:
                 #  password/email dont match
                 flash("Incorrect Email and/or Password")
                 return redirect(url_for("login"))
-
         else:
             # email doesn't exist
             flash("Incorrect Email and/or Password")
@@ -147,16 +144,15 @@ def profile(username):
     # find the current users username from database
     username = mongo.db.users.find_one(
         {"name": session["user"]})["name"]
-    
     if session["user"]:
         recipes = list(mongo.db.recipes.find())
-        return render_template("profile.html", username=username, recipes=recipes)
-    
-    
-    return redirect(url_for("login")) 
+        return render_template("profile.html",
+                               username=username, recipes=recipes)
+    return redirect(url_for("login"))
 
 
-@app.route("/add_recipe", methods=["GET", "POST"])
+@app.route("/add_recipe",
+           methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
         # adds recipe to database
@@ -175,7 +171,6 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("add_recipe"))
-    
     return render_template("add-recipe.html")
 
 
@@ -189,6 +184,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
-
