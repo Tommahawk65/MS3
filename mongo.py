@@ -8,6 +8,7 @@ MONGO_URI=os.environ.get("MONGO_URI")
 DATABASE = "newDB"
 COLLECTION = "cakes"
 
+
 def mongo_connect(url):
     try:
         conn = pymongo.MongoClient(url)

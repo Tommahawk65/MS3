@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="center-align">Register</h3>
-
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
             <div class="card-panel grey lighten-5">
+                <!-- name -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix grey-text">account_circle</i>
@@ -12,7 +12,7 @@
 						<label for="name">Name</label>
 					</div>
                 </div>
-                <!-- username -->
+                <!-- email -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix grey-text">email</i>
