@@ -19,6 +19,13 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home", methods=["GET", "POST"])
+def home():
+    # Homepage with another list of recipes
+    recipes = list(mongo.db.recipes.find())
+    return render_template("index.html", recipes=recipes)
+
+
 @app.route("/get_recipes/<category>")
 def get_recipes(category):
      # matches selected category and only displays matching recipes
@@ -79,14 +86,6 @@ def delete_recipe(recipe_id):
         {"name": session["user"]})["name"]
     flash("Recipe Deleted")
     return render_template("profile.html", username=username)
-
-
-
-@app.route("/home", methods=["GET", "POST"])
-def home():
-    # Homepage with another list of recipes
-    recipes = list(mongo.db.recipes.find())
-    return render_template("index.html", recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
