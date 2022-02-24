@@ -16,3 +16,12 @@
 
 [Back to contents](#table-of-contents)
 
+# Features and Functionality
+
+### Security Testing
+
+- Website was tested on multiple devices.
+- Tesed to ensure unregistered users can access user profiles.
+- Tested to ensure edit/delete functions only available to users who created the recipe.
+- Error messages display when error occurs on site.
+
