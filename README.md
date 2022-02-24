@@ -166,7 +166,7 @@ Mockup designs are made with [Figma.](https://www.figma.com/)
 
 <h1>4. Testing</h1>
 
-The testing process can be found .
+The testing process can be found [here!](TESTING.md).
 
 <span id="deployment"></span>
 

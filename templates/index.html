@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="section no-pad-bot" id="index-banner">
+<div class="section">
     <div class="container">
       <div class="row center logo-block">
-          <img class= "logo" src="/static/images/company.webp" alt="">
+          <img class= "logo" src="/static/images/company.webp" alt="Bakery Logo">
       </div>
       <div class="card-panel dotted-card-panel">
         <div class="row">
@@ -34,7 +34,7 @@
                     <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
                       <div class="card">
                         <div class="card-image ">
-                            <img src="{{recipes.recipe_image_url}}" alt="Not Found" onerror="this.src='/static/images/invalid-upload-alt-image.webp';"> 
+                            <img src="{{recipes.recipe_image_url}}" alt="Recipe Image" onerror="this.src='/static/images/invalid-upload-alt-image.webp';"> 
                           <span class="card-title trans-grey">{{recipes.recipe_name}}</span>
                         </div>
                         <div class="card-content recipe-card-info black-text">
