@@ -63,8 +63,19 @@ body {
   
 }
 
+.card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-content {
+  overflow: scroll;
+  text-overflow: ellipsis;
+}
+
+
 .recipe-card-info{
-  min-height: 325px;
+  height: 200px;
   
 }
 
