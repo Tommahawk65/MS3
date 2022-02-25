@@ -56,7 +56,7 @@ def full_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        
+
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': {
             "recipe_type": request.form.get("recipe_type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -84,7 +84,7 @@ def delete_recipe(recipe_id):
     username = mongo.db.users.find_one(
         {"name": session["user"]})["name"]
     flash("Recipe Deleted")
-    return render_template("profile.html", username=username)
+    return redirect(url_for("profile", username=username))
 
 
 @app.route("/register", methods=["GET", "POST"])
