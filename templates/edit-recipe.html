@@ -67,7 +67,7 @@
                 <div class="row">
                     {% for recipe_ingredients in recipes.recipe_ingredients %}
                         <div class="input-field col s12">
-                            <input id="recipe_ingredients {{ loop.index }}" name="recipe_ingredients {{ loop.index }}" type="text" value="{{ recipe_ingredients }}" class="validate" required>
+                            <input id="recipe_ingredients {{ loop.index }}" name="recipe_ingredients" type="text" value="{{ recipe_ingredients }}" class="validate" required>
                             <label class="grey-text" for="recipe_ingredients {{ loop.index }}">Recipe Ingredients</label>
                             <button type="button" class="btn remove-ingredient">Delete</button><br>
                             <br>
@@ -82,7 +82,7 @@
                 <div class="row">
                     {% for recipe_method in recipes.recipe_method %}
                         <div class="input-field col s12">
-                            <input id="recipe_method {{loop.index}}" name="recipe_method {{loop.index}}" type="text" value="{{ recipe_method }}" class="validate" required>
+                            <input id="recipe_method {{loop.index}}" name="recipe_method" type="text" value="{{ recipe_method }}" class="validate" required>
                             <label class="grey-text" for="recipe_method {{ loop.index }}">Recipe Steps</label>
                             <button type="button" class="btn remove-step">Delete</button>
                             <br>
