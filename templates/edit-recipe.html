@@ -8,9 +8,19 @@
                 <div class="input-field col s12">
                     <select id="recipe_type" name="recipe_type" class="validate" required>
                       <option value="" disabled selected>Choose your option</option>
-                      <option value="Bread">Bread</option>
-                      <option value="Cake">Cake</option>
-                      <option value="Biscuit">Biscuit</option>
+                      {% if recipes.recipe_type == "Bread" %}
+                        <option value="Bread" selected>Bread</option>
+                        <option value="Cake">Cake</option>
+                        <option value="Biscuit">Biscuit</option>
+                      {% elif recipes.recipe_type == "Cake" %}
+                        <option value="Bread">Bread</option>
+                        <option value="Cake" selected>Cake</option>
+                        <option value="Biscuit">Biscuit</option>
+                      {% elif recipes.recipe_type == "Biscuit" %}
+                        <option value="Bread">Bread</option>
+                        <option value="Cake">Cake</option>
+                        <option value="Biscuit" selected>Biscuit</option>
+                      {% endif %}
                     </select>
                     <label for="recipe_type">Recipe Type</label>
                 </div>

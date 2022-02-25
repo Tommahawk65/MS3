@@ -43,7 +43,7 @@
         stp--;
     });
 
-    // edit recipe dropdown loads previoos selection
+    // validation of dropdown list on add recipe
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
