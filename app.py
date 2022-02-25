@@ -70,7 +70,6 @@ def edit_recipe(recipe_id):
             "username": session["user"]
         }})
         flash("Recipe Successfully Updated")
-        print("Ingredients:", request.form.get("recipe_ingredients"))
         return redirect(url_for("profile", username=session["user"]))
 
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
