@@ -105,6 +105,7 @@ def register():
 
         session["user"] = request.form.get("name").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -170,7 +171,8 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("add_recipe"))
+        return redirect(url_for("profile", username=session["user"]))
+        
     return render_template("add-recipe.html")
 
 
