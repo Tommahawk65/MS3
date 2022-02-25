@@ -1,34 +1,29 @@
-# MS3
-
 <h1>Toms Bakery</h1>
 
-![Portfolio website]()
+[View the live project here.](https://backend-project-ms3.herokuapp.com)
 
-Toms recipes was designed  to bring together people with a passion for baking who were interested in learning and sharing knowledge. Users can create/log into their account and upload their own recipes and view ones uploaded by others.
-
-
-**[View the live project here.]()**
+Toms Bakery was designed to bring a community together with a shared passion for baking who were interested in learning and sharing knowledge. Users can create/log into their account and upload their own recipes as well as view ones uploaded by others.
 
 <span id="ux"></span>
 
-<h1>1. User experience (UX)</h1>
+<h1>User experience (UX)</h1>
 
 <span id="ux-goals"></span>
 
 ### 1.1 Project goals 
 
-The goal of this project was to make a clear and easy to understand website that allows people interested in bakery to share and view recipes. All steps required to make a profile, upload and share recipes should be easy to navigate and clear. Navigating the website should be slick and without obvious errors. The design of the website should fit the topic alongside being visually appealing.
+The goal for this project was to make a clear, concise and easy to understand website that allows people interested in bakery to share and view recipes. All steps required to make a profile, upload and share recipes should be easy to navigate and clear. Navigating the website should be slick and without obvious errors. The design of the website should fit the topic alongside being visually appealing.
 
 <span id="ux-stories"></span>
 
-### 1.2 User stories 
+### User stories 
 
 **First-time visitor goals:**
-1. As a first time visitor, I want to easily understand the purpose of the website .
-2. As a First time visitor, I want to be able to easily navigate throughout the site to find content.
-3. As a first time visitor, I want to view recipes created by other users, sorted by category.
+1. As a first time visitor, I want to easily understand the purpose of the website.
+2. As a first time visitor, I want to be able to easily navigate throughout the site to find content.
+3. As a first time visitor, I want to view recipes created by other users, sorted by categories.
 4. As a first time visitor, I want to be able to visit the website on every device with formatting appropriate for all screen sizes.
-5. As a first time visitor, I want to be able to search recipes and have relevant results show
+5. As a first time visitor, I want to be able to search recipes and have relevant results show.
 6. As a first time visitor, I want to register an account on the website, so I can upload my own recipes. 
 
 
@@ -42,15 +37,13 @@ The goal of this project was to make a clear and easy to understand website that
 
 <span id="ux-design"></span>
 
-### 1.3 Design 
+### Design 
 
 - #### Colour scheme 
 I used a colour scheme that I felt would reflect the look of a rustic cookbook.
 
-![Colour scheme](readme_img/colours.png)
-
-- **The brown colour** is used in the navbar,footer,buttons and as a background colour for recipe card elements. 
-- **The white colour** is used to contrast the brown, it is mainly used on text to make it standou. 
+- **The brown colour** is used in the navbar, footer, buttons and as a background colour for recipe card elements. 
+- **The white colour** is used to contrast the brown, it is mainly used on text to make it standout. 
 - **The green colour** is used on some buttons to differentiate it from other buttons with different functions. 
 - **The red colour** is used on some buttons to differentiate it from other buttons with different functions. 
 - **The blue colour** is used on some buttons to differentiate it from other buttons with different functions. 
@@ -66,21 +59,35 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 
 - #### Defensive design 
     - The register form: 
-        - Validates the email input to insure it is valid. 
+        - Validates the email input to ensure it is valid. 
     - The add and edit recipe form:
         - The category selection is from a dropdown list of set choices, this prevents misspelling that would negatively affect searching and display of the categories on the page.
         - Requires that all fields have some text entered.
         - The number of serves, prep and cook time has to be a number.
 
+### Wireframes 
 
-### 1.5 Mockup designs
-Mockup designs are made with [Figma.](https://www.figma.com/)
+#### Home Page
+![Home Page](static/images/wireframes/homepage-wireframe.png "Home Page")
 
-!!!INCLUDE LINKS HERE!!!!
+#### View Recipes
+![View Recipes](static/images/wireframes/view-recipes-wireframe.png "View Recipes")
+
+#### Edit Recipe
+![Edit Recipe](static/images/wireframes/edit-recipe-wireframe.png "Edit Recipe")
+
+#### Full Recipe
+![Full Recipet](static/images/wireframes/full-recipe-wireframe.png "Full Recipe")
+
+#### Register
+![Register](static/images/wireframes/register-wireframe.png "Register")
+
+#### Profile
+![Profile](static/images/wireframes/profile-wireframe.png "Profile")
 
 <span id="features"></span>
 
-<h1>2. Features</h1>
+<h1>Features</h1>
 
 <span id="features-existing"></span>
 
@@ -89,11 +96,11 @@ Mockup designs are made with [Figma.](https://www.figma.com/)
 #### 1. Design 
 - An attractive and simple layout with consistency.
 - Simple navigation throughout the website by using the navigation bar. 
-- Clear display of steps required to bake the recipe shown
+- Clear display of steps required to bake the recipe shown.
 - Layout that fits with the design of a cookbook.
 
 #### 2. General 
-- Responsive header that changes options if user is logged in/out 
+- Responsive header that changes options if the user is logged in/out. 
 - Contact info in footer. 
 - Responsive on all devices and screen sizes. 
 - Reactive elements that respond to user input (buttons). 
@@ -102,13 +109,13 @@ Mockup designs are made with [Figma.](https://www.figma.com/)
 - Recipes can be created, read, updated and deleted (CRUD) by the users that created them. 
 - Recipes are displayed by category, this is displayed in the navbar.
 - People can search for recipes. 
-- Users can log into their profile and view all recipes they have created. 
+- Users can log onto their profile and view all recipes they have created. 
 - Steps and ingredients can contain as many inputs as the user requires.
 
 <span id="features-future"></span>
 
 ### 2.2 Features left to implement in the future 
-- Ability for users to like/favourite recipes and have that display on a separate page  
+- Ability for users to like/favourite recipes and have that displayed on a separate page.  
 - Direct file upload option for recipe image. 
 - More defensive programming such as a confirmation message for recipe deletion.
 - The user can delete their profile to remove their information from the database (Data Protection Laws).
@@ -143,13 +150,13 @@ Mockup designs are made with [Figma.](https://www.figma.com/)
 - [MobgoDB](https://www.mongodb.com/1)
     - MongoDB is the fully managed cloud database service used for the project.
 - [Heroku](https://dashboard.heroku.com/)
-    - Heroki is the cloud platform to deploying the app.
+    - Heroki is the cloud platform for deploying the app.
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
     - Flask is the web framework used to provide libraries, tools and technologies for the app.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
     - Jinja is used for templating Python
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
-    - Werkzeug is used for password hashing and authentication and autohorization.
+    - Werkzeug is used for password hashing and authentication and authorization.
 
 #### Testing tools used 
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) is used to detect problems and test responsiveness.
@@ -164,7 +171,7 @@ Mockup designs are made with [Figma.](https://www.figma.com/)
 
 <span id="testing"></span>
 
-<h1>4. Testing</h1>
+<h1>Testing</h1>
 
 The testing process can be found [here!](TESTING.md).
 
@@ -172,27 +179,100 @@ The testing process can be found [here!](TESTING.md).
 
 <h1>5. Deployment</h1>
 
+## Heroku Deployment
+This project was deployed through Heroku using the following steps:
+
+### Requirements and Procfile
+Heroku needs to know which technologies are being used and any requirements. Before creating the Heroku app, create these files using the following steps: 
+1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages or modules are installed during the project.
+2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run.
+
+3. Create and `env.py` file using the following information:
+```
+import os
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", " *unique secret key* ")
+os.environ.setdefault("MONGO_URI", " *unique uri from mongo.db * ")
+os.environ.setdefault("MONGO_DB", " *database name* ")
+```
+
+This information should not be made public, create a .gitignore file and include the `env.py` to prevent private information being stolen. 
+
+### Creating Heroku App
+- Log into Heroku.
+- Click "create new app".
+- Follow the steps to setup the app.
+- Be sure to select the server that is closest to your current location.
+
+### Connecting Heroku to GitHub
++ From the dashboard, click the 'Deploy' tab towards the top of the screen.
++ From here, locate 'Deployment Method' and choose 'GitHub'.
++ From the search bar newly appeared, locate your repository by name.
++ When you have located the correct repository, click 'Connect'.
++ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this.
++ Click the 'Settings' tab towards the top of the page.
++ Locate the 'Config Vars' and click 'Reveal Config Vars'.
++ Use the following keys and values which must match the key/value pairs in your env.py file:
+
+- In the "Deploy" section click "Github".
+- Follow the steps and find the repository you would like to connect to. 
+- Once Github is connected click the "Setting" button and click "Reveal Config Vars".
+- Add new fields that match the entries below.
+
+IP                                 
+PORT                              
+SECRET_KEY                       
+MONGO_URI                          
+MONGO_DBNAME   
+
+- The values should match your `env.py` file.
+- Enable Automatic deployment.
+- The app should now be built after every Github commit, click "Open App" to view the live site.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+7. Press Enter. Your local clone will be created.
+
+- Import your `env.py` file to the project.
+- Run `pip install -r requirements.txt` to install the packages necessary to run this app. 
 
 <span id="credits"></span>
 
 <h1>6. Credits</h1>
 
-#### Recipes
+-   All Recipes and Recipe images are from [BBC Goodfood](https://www.bbcgoodfood.com/)
 
+-   [Materialize](https://materializecss.com/) : Materialize has been used throughout this project. I have taken examples from the website to form the grid layout, carousel, forms, buttons, navbar and footer.
 
+-   [Error Functions](https://flask.palletsprojects.com/en/2.0.x/errorhandling/) : I used this link to create the error functions in my app.py folder.
 
-#### Media 
+-   Browser icon from (https://www.pngwing.com/en/free-png-mtdhu/download)
 
+-   Homepage logo from (https://graphicdesignjunction.com/2014/11/free-vector-bakery-logos-label/)
 
-#### Code
+-   Background image from (https://getwallpapers.com/collection/desktop-wallpaper-pattern)
 
+<span id="acknowledgements"></span>
 
-<span id="Acknowledge"></span>
+<h1>7. Acknowledgements</h1>
 
-<h1>7. Acknowledge</h1>
+-   My Mentor for continuous helpful feedback.
 
-<span id="Disclaimer"></span>
-
-<h1>8. Disclaimer</h1>
+-   Tutor support at Code Institute for their support.
 
 

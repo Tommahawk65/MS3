@@ -34,7 +34,7 @@
                     <a href="{{ url_for('full_recipe', recipe_id=recipes._id) }}">
                       <div class="card">
                         <div class="card-image ">
-                            <img src="{{recipes.recipe_image_url}}" alt="Recipe Image" onerror="this.src='/static/images/invalid-upload-alt-image.jpg';"> 
+                            <img src="{{recipes.recipe_image_url}}" alt="Recipe Image" loading="lazy" onerror="this.src='/static/images/invalid-upload-alt-image.jpg';"> 
                           <span class="card-title trans-grey">{{recipes.recipe_name}}</span>
                         </div>
                         <div class="card-content recipe-card-info black-text">
