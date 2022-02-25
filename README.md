@@ -91,21 +91,21 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 
 <span id="features-existing"></span>
 
-### 2.1 Existing features 
+### Existing features 
 
-#### 1. Design 
+#### Design 
 - An attractive and simple layout with consistency.
 - Simple navigation throughout the website by using the navigation bar. 
 - Clear display of steps required to bake the recipe shown.
 - Layout that fits with the design of a cookbook.
 
-#### 2. General 
+####  General 
 - Responsive header that changes options if the user is logged in/out. 
 - Contact info in footer. 
 - Responsive on all devices and screen sizes. 
 - Reactive elements that respond to user input (buttons). 
 
-#### 3. Recipes
+#### Recipes
 - Recipes can be created, read, updated and deleted (CRUD) by the users that created them. 
 - Recipes are displayed by category, this is displayed in the navbar.
 - People can search for recipes. 
@@ -114,15 +114,51 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 
 <span id="features-future"></span>
 
-### 2.2 Features left to implement in the future 
+### Features left to implement in the future 
 - Ability for users to like/favourite recipes and have that displayed on a separate page.  
 - Direct file upload option for recipe image. 
 - More defensive programming such as a confirmation message for recipe deletion.
 - The user can delete their profile to remove their information from the database (Data Protection Laws).
 
+# Database
+Below is the schema for my database:
+
+## Recipes
+
+| Key                   |Value type     
+|:-------------         |:------------- 
+|_id                    |ObjectId       
+|recipe_type            |string         
+|recipe_name            |string         
+|recipe_image_url       |string        
+|recipe_prep_time       |string         
+|recipe_cook_time       |string         
+|recipe_description     |string         
+|recipe_serves          |string         
+|recipe_ingredients     |array         
+|recipe_method          |array         
+|username               |string         
+
+## Users
+
+| Key                   |Value type     
+|:-------------         |:------------- 
+|_id                    |ObjectId       
+|email                  |string         
+|password               |string  
+
+## Category
+
+| Key                   |Value type     
+|:-------------         |:------------- 
+|_id                    |ObjectId       
+|category               |string         
+
+
+
 <span id="technologies"></span>
 
-<h1>3. Technologies used</h1>
+<h1>Technologies used</h1>
 
 #### Languages used
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
