@@ -56,7 +56,7 @@ def full_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        # Loads options already in database and alows user to update them
+        
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': {
             "recipe_type": request.form.get("recipe_type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -197,4 +197,4 @@ def internal_server_error(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
