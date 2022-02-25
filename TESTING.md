@@ -19,21 +19,13 @@
 ### Security Testing
 
 - Website was tested on multiple devices.
-- Tested to ensure unregistered users can access user profiles.
+- Tested to ensure unregistered users can't access user profiles.
 - Tested to ensure edit/delete functions only available to users who created the recipe.
 - Error messages display when an error occurs on site.
 
 ### Responsiveness
 
--	The responsiveness of this site was tested using an Apple MacBook Pro, an Ipad 2, an Iphone X, an Iphone XR, a Samsung notepad and a windows laptop.
-
-## Features
-## (A-Z)
-
-### Search Bar
-
--	Search bar was tested on multiple devices. Only the recipe type and name fields are searched and all results show as expected.
-
+-	The responsiveness of this site was tested using an Apple MacBook Pro, an Ipad 2, an Iphone X, an Iphone XR, a Samsung notepad and a Windows laptop.
 
 # User Stories
 
@@ -98,9 +90,9 @@ Logout.
 
 ## Edit Recipe issue
 
-Due to the .update() function no longer working in the newer PYmongo versions I had a lot of issues with .update_one(). My arrays would delete themselves if the user updated another recipe field. For instance, if you wanted to change the cook time, when the update button was clicked all the steps and ingredients were deleted.
+Due to the .update() function no longer working in the newer Pymongo versions, I had a lot of issues with .update_one(). My arrays would delete themselves if the user updated another recipe field. For instance, if you wanted to change the cook time, when the update button was clicked all the steps and ingredients were deleted.
 
-I spent a lot of time trying to solve this issue. It turns out I left the {{loop.index}} in the input name which was causing the name to change on each loop. This was causing the error.
+I spent a lot of time trying to solve this issue. It turns out I left the {{loop.index}} in the input name which was causing the name to change on each loop. It was not the .update_one() method as I thought.
 
 ## iPhone footer spacing
 
@@ -114,15 +106,15 @@ This was fixed by altering grid values on smaller screens.
 
 I had an odd issue that had my recipe cards not breaking evenly and leaving empty gaps.
 
-This was fixed by forcing my img heights to be the same. Materialized grids can have issues with images of different sizes.
+This was fixed by forcing my img heights to be the same. Materialize grids can have issues with images of different sizes.
 
 ## .webP format on older Apple devices
 
-During my testing process I found a confusing bug, On older apple devices none of my images were loading, however on my iPhone X they worked fine.
+During my testing process I found a confusing bug, nn older apple devices none of my images were loading, however on my iPhone X they worked fine.
 
 ![Edit Review form](static/images/safari-webp-bug.PNG)
 
-I eventually found out that older versions of Safari do not support the webP file format. To fix this all I had to do was revert back to a .jpg format. Although this dropped my performance score on testing I felt it was the best thing to do.
+I eventually found out that older versions of Safari do not support the webP file format. To fix this all I had to do was revert back to a .jpg format. Although this dropped my performance score on lighthouse testing I felt it was the best thing to do.
 
 ##### User Story Testing
 
@@ -131,13 +123,11 @@ I eventually found out that older versions of Safari do not support the webP fil
   * A user is able to view all recipes without needing to register.
 
     
-
 * "I want to upload my recipe and have my name credited"
 
   * A logged in user can upload their recipe from the profile page. The full recipe page auto loads the username of the creator.
 
     
-
 * " I made a mistake and want to edit my recipe"
 
   * The recipe creator can edit a single field in the recipe without having to input the whole thing.
@@ -157,7 +147,7 @@ I eventually found out that older versions of Safari do not support the webP fil
     
 ##### Lighthouse Testing
 
-- As mentioned above I chose to revert to .jpg images to ensure compatibility. My largest file is a background image in my .css folder. I was not able to find a way to create a dual image system that checked compatibility. This slightly lowered my score. 
+- As mentioned above, I chose to revert to .jpg images to ensure compatibility. My largest file is a background image in my .css folder. I was not able to find a way to create a dual image system that checked compatibility. This slightly lowered my score, however my pages were still nearly all green in all of my testing.
 
 
 ##### General Testing

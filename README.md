@@ -2,7 +2,7 @@
 
 [View the live project here.](https://backend-project-ms3.herokuapp.com)
 
-Toms Bakery was designed to bring a community together with a shared passion for baking who were interested in learning and sharing knowledge. Users can create/log into their account and upload their own recipes as well as view ones uploaded by others.
+Toms Bakery was designed to bring a community together with a shared passion for baking and who were interested in learning and sharing knowledge. Users can create/log into their account and upload their own recipes, as well as view ones uploaded by others.
 
 <span id="ux"></span>
 
@@ -52,7 +52,7 @@ I used a colour scheme that I felt would reflect the look of a rustic cookbook.
 The Materialize standard Roboto font on the whole website. I felt that it matched the style of my website design while being clear and easy to read.
 
 - #### Icons
-The icons used are the Google Material Design Icons, I chose these for their integration with Materialize and the wide selection on offer. I was able to easily find everything I needed with this library. 
+The icons used are the Google Material Design icons, I chose these for their integration with Materialize and the wide selection on offer. I was able to easily find everything I needed with this library. 
 
 - #### Images
 The images I used for this project came from [BBC Goodfood](https://www.bbcgoodfood.com/). These images are used on all the recipe cards as they provide a consistent style. 
@@ -186,7 +186,6 @@ This project was deployed through Heroku using the following steps:
 Heroku needs to know which technologies are being used and any requirements. Before creating the Heroku app, create these files using the following steps: 
 1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages or modules are installed during the project.
 2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run.
-
 3. Create and `env.py` file using the following information:
 ```
 import os
@@ -206,18 +205,9 @@ This information should not be made public, create a .gitignore file and include
 - Be sure to select the server that is closest to your current location.
 
 ### Connecting Heroku to GitHub
-+ From the dashboard, click the 'Deploy' tab towards the top of the screen.
-+ From here, locate 'Deployment Method' and choose 'GitHub'.
-+ From the search bar newly appeared, locate your repository by name.
-+ When you have located the correct repository, click 'Connect'.
-+ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this.
-+ Click the 'Settings' tab towards the top of the page.
-+ Locate the 'Config Vars' and click 'Reveal Config Vars'.
-+ Use the following keys and values which must match the key/value pairs in your env.py file:
-
 - In the "Deploy" section click "Github".
 - Follow the steps and find the repository you would like to connect to. 
-- Once Github is connected click the "Setting" button and click "Reveal Config Vars".
+- Once Github is connected click the "Settings" button and click "Reveal Config Vars".
 - Add new fields that match the entries below.
 
 IP                                 
@@ -232,7 +222,7 @@ MONGO_DBNAME
 
 ### Forking the GitHub Repository
 
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps.
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.

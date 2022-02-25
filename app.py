@@ -56,7 +56,7 @@ def full_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-
+        # Updates existing recipe
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {'$set': {
             "recipe_type": request.form.get("recipe_type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -172,7 +172,7 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("profile", username=session["user"]))
-        
+
     return render_template("add-recipe.html")
 
 
