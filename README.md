@@ -138,6 +138,9 @@ Collects the users name, email and password. Information is used for login on we
 #### Recipes
 Displays all recipe information created by the user. The array inputs allowd dynamic sizing as recipes don't have a standard number of steps or ingredients.
 
+#### Category
+Sets a general type of recipe to allow easier categorization.
+
 
 #### Recipes
 
@@ -164,9 +167,20 @@ Displays all recipe information created by the user. The array inputs allowd dyn
 |email                  |string         
 |password               |string  
 
+
+#### Category
+
+| Key                   |Value type     
+|:-------------         |:------------- 
+|_id                    |ObjectId 
+|category               |string        
+
 ## ERD
 ![ERD](static/images/database/erd-diagram.png "ERD")
 
+### Notes for improvement 
+
+Ultimately the category table proved to not be useful in this application when writing the code, so it was largely unused. However for future expansion on this app, the ability for users to add new categories would not only make this more useful but give extra functionality too visitors of this website.
 
 <span id="technologies"></span>
 

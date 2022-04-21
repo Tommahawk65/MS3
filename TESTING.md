@@ -4,15 +4,19 @@
 
 ### HTML5
 [W3C HTML Validator](https://validator.w3.org/#validate_by_input) Passed all tests, minus the Jinja errors.
+![HTML Validator](static/images/validation/html-test.PNG)
 
 ### CSS3 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) No Errors
+![CSS Validator](static/images/validation/css-test.PNG)
 
 ### JS
 [JSHint](https://www.jshint.com/) No Errors
+![Javascript Validator](static/images/validation/javascript-test.PNG)
 
 ### Python
 [PEP8 Online](http://pep8online.com/) No Errors
+![HTML Validator](static/images/validation/python-test.PNG)
 
 # Features and Functionality
 
