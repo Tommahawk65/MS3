@@ -121,9 +121,11 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 - The user can delete their profile to remove their information from the database (Data Protection Laws).
 
 # Database
+
+### Schema
 Below is the schema for my database:
 
-## Recipes
+#### Recipes
 
 | Key                   |Value type     
 |:-------------         |:------------- 
@@ -139,7 +141,7 @@ Below is the schema for my database:
 |recipe_method          |array         
 |username               |string         
 
-## Users
+#### Users
 
 | Key                   |Value type     
 |:-------------         |:------------- 
@@ -147,13 +149,15 @@ Below is the schema for my database:
 |email                  |string         
 |password               |string  
 
-## Category
+#### Category
 
 | Key                   |Value type     
 |:-------------         |:------------- 
 |_id                    |ObjectId       
 |category               |string         
 
+## ERD
+![ERD](static/images/database/erd-diagram.png "ERD")
 
 
 <span id="technologies"></span>

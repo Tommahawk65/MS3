@@ -116,7 +116,7 @@ During my testing process I found a confusing bug, nn older apple devices none o
 
 I eventually found out that older versions of Safari do not support the webP file format. To fix this all I had to do was revert back to a .jpg format. Although this dropped my performance score on lighthouse testing I felt it was the best thing to do.
 
-##### User Story Testing
+## User Story Testing
 
 * "I want to view some recipes without creating an account"
 
@@ -145,12 +145,20 @@ I eventually found out that older versions of Safari do not support the webP fil
   * A user can use the search bar in the recipes page to find specific results.
 
     
-##### Lighthouse Testing
+## Lighthouse Testing
 
 - As mentioned above, I chose to revert to .jpg images to ensure compatibility. My largest file is a background image in my .css folder. I was not able to find a way to create a dual image system that checked compatibility. This slightly lowered my score, however my pages were still nearly all green in all of my testing.
 
+#### Desktop 
 
-##### General Testing
+![Lighthouse Desktop Test 1](static/images/lighthouse-testing/lighthouse-test-1.png)
+
+#### Mobile 
+
+![Lighthouse Mobile Test 1](static/images/lighthouse-testing/lighthouse-test-2.png)
+
+
+## General Testing
 
 * All internal page links work.
 
