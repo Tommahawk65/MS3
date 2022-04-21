@@ -130,7 +130,7 @@ The types of data stored in MongoDB for this project are:
 - String
 - Array
 
-The schema contains two related tables, with both containing multiple documents.
+The schema contains three related tables, with all containing multiple documents.
 
 #### Users
 Collects the users name, email and password. Information is used for login on website. The name document is also accsesed by the recipes collection to display user data.
