@@ -123,7 +123,21 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 # Database
 
 ### Schema
-Below is the schema for my database:
+Below is the schema for my database, For the purpose of this assignment I used a NoSQL database structure with MongoDB. Some debate exists about the merits or Relational vs Non Relational databases and their sutability for projects such as this, however this was chosen based on the course structure.
+
+The types of data stored in MongoDB for this project are:
+- ObjectId
+- String
+- Array
+
+The schema contains two related collections, with both containing multiple documents.
+
+#### Users
+Collects the users name, email and password. Information is used for login on website. The name document is also accsesed by the recipes collection to display user data.
+
+#### Recipes
+Displays all recipe information created by the user. The array inputs allowd dynamic sizing as recipes don't have a standard number of steps or ingredients.
+
 
 #### Recipes
 
@@ -145,16 +159,10 @@ Below is the schema for my database:
 
 | Key                   |Value type     
 |:-------------         |:------------- 
-|_id                    |ObjectId       
+|_id                    |ObjectId 
+|name                   |string        
 |email                  |string         
 |password               |string  
-
-#### Category
-
-| Key                   |Value type     
-|:-------------         |:------------- 
-|_id                    |ObjectId       
-|category               |string         
 
 ## ERD
 ![ERD](static/images/database/erd-diagram.png "ERD")
