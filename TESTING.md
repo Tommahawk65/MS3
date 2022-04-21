@@ -12,6 +12,7 @@
 
 ### JS
 [JSHint](https://www.jshint.com/) No Errors
+
 ![Javascript Validator](static/images/validation/javascript-test.png)
 
 ### Python
