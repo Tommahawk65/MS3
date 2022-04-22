@@ -123,20 +123,20 @@ The images I used for this project came from [BBC Goodfood](https://www.bbcgoodf
 # Database
 
 ### Schema
-Below is the schema for my database, for the purpose of this assignment I used a NoSQL database structure with MongoDB. Some debate exists about the merits or Relational vs Non Relational databases and their sutability for projects such as this, however this was chosen based on the course structure.
+Below is the schema for my database, for the purpose of this assignment I used a NoSQL database structure with MongoDB. Some debate exists about the merits or Relational vs Non Relational databases and their suitability for projects such as this, however this was chosen based on the course structure.
 
 The types of data stored in MongoDB for this project are:
-- ObjectId
-- String
-- Array
+-	ObjectId
+-	String
+-	Array
 
 The schema contains three related tables, with all containing multiple documents.
 
 #### Users
-Collects the users name, email and password. Information is used for login on website. The name document is also accsesed by the recipes collection to display user data.
+Collects the users name, email and password. Information is used for login on website. The name document is also accessed by the recipes collection to display user data.
 
 #### Recipes
-Displays all recipe information created by the user. The array inputs allowd dynamic sizing as recipes don't have a standard number of steps or ingredients.
+Displays all recipe information created by the user. The array inputs allows dynamic sizing as recipes don't have a standard number of steps or ingredients.
 
 #### Category
 Sets a general type of recipe to allow easier categorization.
