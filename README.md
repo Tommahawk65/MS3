@@ -1,6 +1,6 @@
 <h1>Toms Bakery</h1>
 
-[View the live project here.](https://backend-project-ms3.herokuapp.com)
+[View the live project here.](https://backend-project-ms3.herokuapp.com) (Currently Offline)
 
 Toms Bakery was designed to bring a community together with a shared passion for baking and who were interested in learning and sharing knowledge. Users can create/log into their account and upload their own recipes, as well as view ones uploaded by others.
 
